@@ -1,0 +1,5 @@
+Source/UnityProj/Library/
+Source/UnityProj/Logs/
+
+*.csproj
+*.sln
