@@ -1,12 +1,15 @@
 #!/usr/bin/env sh
-UNITY_HOME="/Applications/Unity/Hub/Editor/2020.3.3f1c1/Unity.app"
+UNITY_HOME="/Applications/Unity/Hub/Editor/2020.3.4f1c1/Unity.app"
 GMCS="$UNITY_HOME/Contents/Mono/bin/gmcs"
 if [ ! -d $GMCS ]; then
     GMCS="$UNITY_HOME/Contents/MonoBleedingEdge/bin/mcs"
 fi
 MONO="$UNITY_HOME/Contents/MonoBleedingEdge/bin/mono"
-DLL_OUTPUT="../UnityProj/Assets/Plugins/IFix.Core.dll"
-TOOL_KIT_PATH="../UnityProj/IFixToolKit"
+# DLL_OUTPUT="../UnityProj/Assets/Plugins/IFix.Core.dll"
+# TOOL_KIT_PATH="../UnityProj/IFixToolKit"
+
+DLL_OUTPUT="/Users/ron/github/WastedLand_Unity/Assets/Plugins/IFix.Core.dll"
+TOOL_KIT_PATH="/Users/ron/github/WastedLand_Unity/IFixToolKit"
 
 $GMCS ShuffleInstruction.cs -out:./ShuffleInstruction.exe
 $MONO ShuffleInstruction.exe Src/Core/Instruction.cs Instruction.cs

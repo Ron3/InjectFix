@@ -46,6 +46,10 @@ namespace IFix.Core
             {
                 Type declaringType = externTypes[reader.ReadInt32()];
                 string methodName = reader.ReadString();
+
+                // by Ron
+                if(VirtualMachine.Info != null) VirtualMachine.Info($"readMethod generic==> {methodName}");
+
                 //Console.WriteLine("load generic method: " + declaringType + " ?? " + methodName);
                 int genericArgCount = reader.ReadInt32();
                 //Console.WriteLine("genericArgCount:" + genericArgCount);
@@ -133,6 +137,9 @@ namespace IFix.Core
                 Type declaringType = externTypes[reader.ReadInt32()];
                 string methodName = reader.ReadString();
                 int paramCount = reader.ReadInt32();
+
+                if(VirtualMachine.Info != null) VirtualMachine.Info($"readMethod ==>{methodName}");
+
                 //Console.WriteLine("load no generic method: " + declaringType + " ?? " + methodName + " pc "
                 //    + paramCount);
                 Type[] paramTypes = new Type[paramCount];

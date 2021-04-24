@@ -3641,6 +3641,7 @@ namespace IFix
 
         void genCodeForCustomBridge()
         {
+            Console.WriteLine($"genCodeForCustomBridge {assembly.FullName}");
             var customBirdgeTypes = (
                 from module in assembly.Modules
                 from type in module.Types
@@ -3651,9 +3652,15 @@ namespace IFix
                 from instruction in method.Body.Instructions
                 where instruction.OpCode.Code == Code.Ldtoken && instruction.Operand is TypeReference
                 select instruction.Operand as TypeReference);
+
+            int countNum = 0;
             foreach(var t in customBirdgeTypes)
             {
+                countNum += 1;
+                
                 var td = t.Resolve();
+                Console.WriteLine($"CustomBridgeAttribute ==> {countNum}, {td.FullName}");
+
                 if(td.IsDelegate())
                 {
                     var invoke = td.Methods.Single(m => m.Name == "Invoke");
