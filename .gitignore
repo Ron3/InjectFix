@@ -3,7 +3,6 @@ Source/UnityProj/Logs/
 Source/UnityProj/Temp/
 Source/UnityProj/obj/
 
-
 *.csproj
 *.sln
 *.dll.hash
