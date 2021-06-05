@@ -8,6 +8,7 @@ MONO="$UNITY_HOME/Contents/MonoBleedingEdge/bin/mono"
 # DLL_OUTPUT="../UnityProj/Assets/Plugins/IFix.Core.dll"
 # TOOL_KIT_PATH="../UnityProj/IFixToolKit"
 
+# by Ron 直接发布到我们的项目下
 DLL_OUTPUT="/Users/ron/github/WastedLand_Unity/Assets/Plugins/IFix.Core.dll"
 TOOL_KIT_PATH="/Users/ron/github/WastedLand_Unity/IFixToolKit"
 
